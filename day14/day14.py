@@ -11,4 +11,4 @@ Comet can fly 3 km/s for 37 seconds, but then must rest for 76 seconds.
 Prancer can fly 9 km/s for 12 seconds, but then must rest for 97 seconds.
 Dancer can fly 37 km/s for 1 seconds, but then must rest for 36 seconds.
 """.strip().splitlines()
-print(data)
+
