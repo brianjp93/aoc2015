@@ -42,7 +42,7 @@ class Race:
         if leftover >= data[1]:
             distance += speed
         else:
-            distance += leftover / data[1] * data[0]
+            distance += leftover * data[0]
         return distance
 
     def find_winner(self, t):
@@ -53,25 +53,24 @@ class Race:
             if dist > max_dist:
                 max_name = [name]
                 max_dist = dist
-            elif dist == max_dist:
+            elif float(dist) == float(max_dist):
                 max_name.append(name)
         return max_name, max_dist
 
     def award_points(self, t):
         points = {name: 0 for name in self.data}
         for i in range(1, t + 1):
-            print(i)
             max_names, _ = self.find_winner(i)
-            print(max_names)
             for name in max_names:
                 points[name] += 1
         return points
 
 
-r = Race(test)
+r = Race(data)
 winner, dist = r.find_winner(2503)
 print(winner)
 print(dist)
 
-points = r.award_points(1000)
+points = r.award_points(2503)
 print(points)
+print(max(points.values()))
